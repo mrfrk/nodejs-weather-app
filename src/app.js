@@ -7,7 +7,7 @@ const forecast = require('./utils/forecast')
 const { createSecretKey } = require('crypto')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 
 // Define paths for Express config 
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -99,4 +99,5 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(port, () => {console.log(`Listening port 3000. Web Server is live! `)})
+app.listen(port, () => {
+  console.log('Listening port ' + port +'. Web Server is live! ')})
