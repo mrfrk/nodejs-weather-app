@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const location = search.value
-    messageOne.textContent = 'Use the search button above to fetch forecast data...'
+    messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
     fetch('/weather?address=' + location).then((response) => {

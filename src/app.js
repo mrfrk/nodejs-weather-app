@@ -24,7 +24,7 @@ app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
   res.render('index',{
-    title: 'Weather App',
+    title: 'Weather',
     name: 'Omer F.C.'
   })
 })
@@ -61,7 +61,7 @@ app.get('/weather', (req, res) => {
         }
 
         res.send({
-          forecast: 'Day temperature is ' +forecastData.day + '. Night temp is ' + forecastData.night,
+          forecast: 'Day temperature is ' +forecastData.day + 'C. Night temp is ' + forecastData.night + 'C.',
           location: place,
           address: req.query.address
         })
