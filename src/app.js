@@ -15,7 +15,7 @@ const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
 // Setup handlebars engine and views location
-app.set('view engine', 'hbs')       //view engine and views is predetermined sytaxes by express
+app.set('view engine', 'hbs')       //view engine and views is predetermined syntaxes by express
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)      // registers all partials in that directory
 
@@ -61,7 +61,7 @@ app.get('/weather', (req, res) => {
         }
 
         res.send({
-          forecast: 'Day temperature is ' +forecastData.day + '. Night temp is ' + forecastData.night,
+          forecast: 'Day temperature is ' +forecastData.day + 'C. Night temp is ' + forecastData.night + 'C.',
           location: place,
           address: req.query.address
         })
